@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+<title>Create New CSR</title>
+<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
+
+<!-- Bootstrap core CSS -->
+	<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/cover/cover.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div align="center">
+        <h1>Create New CSR</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${program}"
+            method="post">
+ 
+            <table border="" cellpadding="10">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                </tr>
+                <tr>
+                    <td>Category:</td>
+                    <td>
+					<select th:field="*{category}" />
+					  <option value="Pendidikan">Pendidikan</option>
+					  <option value="Kesehatan">Kesehatan</option>
+ 					  <option value="Masyarakat">Masyarakat</option>
+					  <option value="Lingkungan Hidup">Lingkungan Hidup</option>					
+					</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>
+                    <select th:field="*{location}" />
+					  <option value="DKI Jakarta">DKI Jakarta</option>
+					  <option value="Banten">Banten</option>
+ 					  <option value="Jawa Barat">Jawa Barat</option>
+					  <option value="Jawa Tengah">Jawa Tengah</option>					
+					  <option value="DI Yogyakarta">DI Yogyakarta</option>
+					  <option value="Jawa Timur">Jawa Timur</option>
+					</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Plan Date:</td>
+                    <td><input type="date" th:field="*{plandate}" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
